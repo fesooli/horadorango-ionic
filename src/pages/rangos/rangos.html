@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>rangos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let p of places">
+      <p>{{p.name}}</p>
+      <p>{{p.kindOfFood}}</p>
+      <p>{{p.phone}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
