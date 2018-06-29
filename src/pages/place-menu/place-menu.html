@@ -1,0 +1,33 @@
+<!--
+  Generated template for the PlaceMenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>placeMenu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding center>
+  <p>{{place.name}}</p>
+  <p>{{place.address}}</p>
+  <p>{{place.phone}}</p>
+
+  <ion-list>
+    <button ion-item *ngFor="let food of place.menu" (click)="select(food)">
+        <p>{{food.item}}</p>
+        <p>{{food.price}}</p>
+    </button>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab mini color="primary" (click)="comprar()">
+        <ion-icon name="cart"></ion-icon>
+    </button>
+  </ion-fab>
+  
+</ion-content>

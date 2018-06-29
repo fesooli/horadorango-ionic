@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestaurantsProvider } from '../../providers/restaurants/restaurants';
+import { PlaceMenuPage } from '../place-menu/place-menu';
 
 /**
  * Generated class for the RangosPage page.
@@ -27,12 +28,11 @@ export class RangosPage {
   public loadPlaces(){
     this.restaurantsProvider.getPlaces().then(data => {
       this.places = data;
-      console.log(this.places);
     });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RangosPage');
+  public verMenu(place: any): void {
+    this.navCtrl.push(PlaceMenuPage, {place: place});
   }
 
 }

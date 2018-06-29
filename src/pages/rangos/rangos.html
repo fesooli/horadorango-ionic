@@ -9,7 +9,10 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let p of places">
+    <ion-item *ngFor="let p of places" (click)="verMenu(p)">
+      <ion-avatar item-start>
+        <img src="{{p.image}}">
+      </ion-avatar>
       <p>{{p.name}}</p>
       <p>{{p.kindOfFood}}</p>
       <p>{{p.phone}}</p>
