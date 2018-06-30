@@ -28,6 +28,7 @@ export class RangosPage {
   public loadPlaces(){
     this.restaurantsProvider.getPlaces().then(data => {
       this.places = data;
+      console.log(data);
     });
   }
 

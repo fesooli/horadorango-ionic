@@ -1,11 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Pedidos Feitos
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+      <ion-item *ngFor="let p of payments">
+        <p>Estabelecimento: {{p.localName}}</p>
+        <p>Forma de Pagamento: {{p.paymentForm}}</p>
+        <p>Pedido: {{p.orderRequested}}</p>
+        <p>Preço Total: {{p.totalPrice | currency:'BRL':true:'1.2-2'}}</p>
+      </ion-item>
+  </ion-list>
 </ion-content>

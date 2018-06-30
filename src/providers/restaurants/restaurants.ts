@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class RestaurantsProvider {
 
   public places: any;
-  private url = 'https://horadorango.herokuapp.com/place/'; 
+  private url = 'https://cors-anywhere.herokuapp.com/https://horadorango.herokuapp.com/place/'; 
 
   constructor(public http: HttpClient) {
   }

@@ -6,27 +6,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RangosPage } from '../pages/rangos/rangos';
 import { PlaceMenuPage } from '../pages/place-menu/place-menu';
 import { PaymentPage } from '../pages/payment/payment';
+import { FinishOrderPage } from '../pages/finish-order/finish-order';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestaurantsProvider } from '../providers/restaurants/restaurants';
 import { PaymentProvider } from '../providers/payment/payment';
+import { DatabaseProvider } from '../providers/database/database';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
     RangosPage,
     PlaceMenuPage,
-    PaymentPage
+    PaymentPage,
+    FinishOrderPage
   ],
   imports: [
     BrowserModule,
@@ -38,18 +40,20 @@ import { PaymentProvider } from '../providers/payment/payment';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
     RangosPage,
     PlaceMenuPage,
-    PaymentPage
+    PaymentPage,
+    FinishOrderPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestaurantsProvider,
-    PaymentProvider
+    PaymentProvider,
+    DatabaseProvider,
+    SQLite
   ]
 })
 export class AppModule {}

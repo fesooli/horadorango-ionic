@@ -4,7 +4,23 @@ export class Order {
     private price: number;
     private foodName: String;
     private restaurantName: String;
-    private restaurantId: String;
+    private paymentForm: String;
+
+    /**
+     * Getter $paymentForm
+     * @return {String}
+     */
+	public get $paymentForm(): String {
+		return this.paymentForm;
+	}
+
+    /**
+     * Setter $paymentForm
+     * @param {String} value
+     */
+	public set $paymentForm(value: String) {
+		this.paymentForm = value;
+	}
 
     /**
      * Getter $id

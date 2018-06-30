@@ -7,30 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Payment</ion-title>
+    <ion-title>Finalizar Pedido</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list radio-group>
-    <ion-item *ngFor="let form of paymentForm">
+  <p style="font-weight: bold; font-size: 20px;">Formas de Pagamento</p>
+
+  <ion-list radio-group *ngFor="let form of paymentForm" [(ngModel)]="cardBrand">
+    <ion-item>
       <ion-label>{{form}}</ion-label>
       <ion-radio value="{{form}}"></ion-radio>
     </ion-item>
   </ion-list>
 
-  <p>Endereço de Entrega</p>
-  <p>Rua Claudio da Costa, 137 - São Paulo</p>
+  <p style="font-weight: bold; font-size: 16px;">Endereço de Entrega</p>
+  <p>Avenida Paulista, 1000 - São Paulo</p>
 
-  <p>Pedido</p>
+  <p style="font-weight: bold; font-size: 16px;">Pedido</p>
   <ion-list>
     <ion-item *ngFor="let order of orders">
       <p>{{order.foodName}}</p>
-      <p>{{order.price}}</p>
+      <p>{{order.price | currency:'BRL':true:'1.2-2'}}</p>
     </ion-item>
   </ion-list>
 
-  <p>Total: {{totalOrderPrice}}</p>
+  <p style="font-weight: bold; font-size: 16px; color: red;">Total: {{totalOrderPrice | currency:'BRL':true:'1.2-2'}}</p>
+  <button ion-button full color="dark" (click)="finalizarPedido()">Finalizar Pedido</button>
 </ion-content>

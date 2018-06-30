@@ -2,6 +2,12 @@
   "name": "HoraDoRango",
   "app_id": "",
   "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "http://localhost:8004/index.html",
+      "proxyUrl": "https://horadorango.herokuapp.com/place/"
+    }
+  ],
   "integrations": {
     "cordova": {}
   }

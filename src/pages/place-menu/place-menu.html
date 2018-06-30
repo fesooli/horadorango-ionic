@@ -7,20 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>placeMenu</ion-title>
+    <ion-title>Escolha o Pedido</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding center>
-  <p>{{place.name}}</p>
-  <p>{{place.address}}</p>
-  <p>{{place.phone}}</p>
+  <p align="center" style="font-weight: bold; font-size: 16px; color: red;">{{place.name}}</p>
+  <p align="center" style="font-weight: bold; font-size: 14px;">{{place.address}}</p>
+  <p align="center" style="font-weight: bold; font-size: 14px;">{{place.phone}}</p>
 
   <ion-list>
     <button ion-item *ngFor="let food of place.menu" (click)="select(food)">
         <p>{{food.item}}</p>
-        <p>{{food.price}}</p>
+        <p>{{food.price | currency:'BRL':true:'1.2-2'}}</p>
     </button>
   </ion-list>
 
